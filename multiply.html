@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Multiplication</title>
+	
+</head>
+<body style="background-color: red;">
+	
+	<!-- <input type="file" name=""> -->
+	<center>
+		<h1 style="color: white;">MULTIPLICATION TABLE</h1>
+	<input type="number" id="first" placeholder="rows" style="color: blue;">
+	<input type="number" id="second" placeholder="columns" style="color: blue;">
+	<button onclick="multiply()" style="background-color: white;"> DISPLAY </button><br>
+	<input type="number" id="result" style="background-color: white; color: blue;" name="" disabled="">
+	<button onclick="pro()">PRODUCT</button>
+	<hr>
+	<div id="displaye" style="width: auto; background-color: blue; color: #000066;"></div>
+	</center>
+</body>
+
+<script type="text/javascript">
+	multiply = () => {
+		if(second.value && first.value){
+			var bb = "";
+			bb+="<table border='1' ><tr style = 'background-color:yellow; width: 100px;'>";		
+			var bbb = "	"; 
+			for (var i = 1; i <= second.value; i++) {
+					bbb+="<td>";
+				for (var a = 1; a <= first.value; a++) {
+					bbb+= a +" * "+i +" = " + a*i +"<br>";
+				
+					
+				}
+				bbb+="</td>"
+			}
+					bb+= bbb + "</tr></table>";
+					displaye.innerHTML = bb;
+		}else{
+			alert("Please input the two values to compute");
+		}
+	}
+	pro = () => {
+		var a = first.value;
+		var b = second.value;
+		var c = a * b;
+		result.value = c;
+	}
+	
+
+</script>
+</body>
+</html>
